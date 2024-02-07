@@ -1,6 +1,6 @@
-package io.github.joshy56.economic.subject;
+package io.github.joshy56.subject;
 
-import io.github.joshy56.economic.response.Response;
+import io.github.joshy56.response.Response;
 
 import java.util.UUID;
 

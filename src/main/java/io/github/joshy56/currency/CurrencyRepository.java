@@ -1,6 +1,6 @@
-package io.github.joshy56.economic.currency;
+package io.github.joshy56.currency;
 
-import io.github.joshy56.economic.response.Response;
+import io.github.joshy56.response.Response;
 
 import java.util.List;
 import java.util.Set;
@@ -9,7 +9,7 @@ import java.util.Set;
  * @author joshy56
  * @since 3/2/2024
  */
-public interface CurrencyRespository {
+public interface CurrencyRepository {
     Response<Currency> get(String name);
     Response<TransactionalCurrency> get(String name, CurrencyAttributes... needed);
     Response<List<Currency>> getThey(Set<String> names);

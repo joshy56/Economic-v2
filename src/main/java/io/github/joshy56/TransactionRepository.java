@@ -1,8 +1,8 @@
-package io.github.joshy56.economic;
+package io.github.joshy56;
 
-import io.github.joshy56.economic.currency.Currency;
-import io.github.joshy56.economic.response.Response;
-import io.github.joshy56.economic.subject.Subject;
+import io.github.joshy56.currency.Currency;
+import io.github.joshy56.response.Response;
+import io.github.joshy56.subject.Subject;
 
 import java.util.Set;
 import java.util.UUID;

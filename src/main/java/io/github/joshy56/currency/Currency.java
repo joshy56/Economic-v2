@@ -1,6 +1,6 @@
-package io.github.joshy56.economic.currency;
+package io.github.joshy56.currency;
 
-import io.github.joshy56.economic.response.Response;
+import io.github.joshy56.response.Response;
 
 /**
  * @author joshy56

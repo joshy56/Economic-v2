@@ -1,4 +1,4 @@
-package io.github.joshy56.economic.subject;
+package io.github.joshy56.subject;
 
 import java.util.Optional;
 import java.util.UUID;

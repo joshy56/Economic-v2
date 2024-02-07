@@ -1,4 +1,4 @@
-package io.github.joshy56.economic.currency;
+package io.github.joshy56.currency;
 
 /**
  * @author joshy56
