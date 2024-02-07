@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.github.joshy56.economic</groupId>
-    <artifactId>Economic-v2</artifactId>
-    <version>0.0.0.0-SNAPSHOT</version>
+    <artifactId>economic-v2</artifactId>
+    <version>0.0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <properties>

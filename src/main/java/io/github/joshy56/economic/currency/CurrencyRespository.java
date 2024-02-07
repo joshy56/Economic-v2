@@ -1,4 +1,6 @@
-package io.github.joshy56.economic;
+package io.github.joshy56.economic.currency;
+
+import io.github.joshy56.economic.response.Response;
 
 import java.util.List;
 import java.util.Set;

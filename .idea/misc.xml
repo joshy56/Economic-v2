@@ -13,7 +13,7 @@
     <option name="afterCompileTasks">
       <set>
         <MavenCompilerTask>
-          <option name="goal" value="deploy" />
+          <option name="goal" value="package" />
           <option name="projectPath" value="$PROJECT_DIR$/pom.xml" />
         </MavenCompilerTask>
       </set>
