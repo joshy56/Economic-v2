@@ -1,4 +1,4 @@
-package io.github.joshy56;
+package io.github.joshy56.economic;
 
 /**
  * @author joshy56

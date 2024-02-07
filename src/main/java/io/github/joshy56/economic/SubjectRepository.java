@@ -1,7 +1,6 @@
-package io.github.joshy56;
+package io.github.joshy56.economic;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.Set;
 import java.util.UUID;
 
