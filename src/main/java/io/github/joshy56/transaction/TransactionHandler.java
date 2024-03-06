@@ -1,4 +1,4 @@
-package io.github.joshy56;
+package io.github.joshy56.transaction;
 
 import io.github.joshy56.currency.Currency;
 import io.github.joshy56.response.Response;
@@ -9,9 +9,9 @@ import java.util.UUID;
 
 /**
  * @author joshy56
- * @since 6/2/2024
+ * @since 12/2/2024
  */
-public interface TransactionRepository {
+public interface TransactionHandler {
 
     /**
      *
@@ -20,14 +20,6 @@ public interface TransactionRepository {
      * @return
      */
     Response<Double> balance(UUID subject, String currencyName);
-
-    /**
-     *
-     * @param subject
-     * @param currency
-     * @return
-     */
-    Response<Double> balance(UUID subject, Currency currency);
 
     /**
      *
@@ -41,29 +33,11 @@ public interface TransactionRepository {
     /**
      *
      * @param subject
-     * @param currency
-     * @param amount
-     * @return
-     */
-    Response<Boolean> withdraw(UUID subject, Currency currency, double amount);
-
-    /**
-     *
-     * @param subject
      * @param currencyName
      * @param amount
      * @return
      */
     Response<Boolean> deposit(UUID subject, String currencyName, double amount);
-
-    /**
-     *
-     * @param subject
-     * @param currency
-     * @param amount
-     * @return
-     */
-    Response<Boolean> deposit(UUID subject, Currency currency, double amount);
 
     /**
      *
@@ -76,24 +50,15 @@ public interface TransactionRepository {
 
     /**
      *
-     * @param subject
-     * @param currency
-     * @param amount
+     * @param subjectIdentifier
      * @return
      */
-    Response<Boolean> enoughMoney(UUID subject, Currency currency, double amount);
+    Response<Set<Currency>> currenciesOf(UUID subjectIdentifier);
 
     /**
      *
-     * @param subject
+     * @param currencyName
      * @return
      */
-    Response<Set<Currency>> currenciesOf(UUID subject);
-
-    /**
-     *
-     * @param currency
-     * @return
-     */
-    Response<Set<Subject>> subjectsOf(Currency currency);
+    Response<Set<Subject>> subjectsOf(String currencyName);
 }
