@@ -11,7 +11,7 @@ public record Namespace(@NotNull String key, @NotNull String name) {
      * Give the join or formatted value of key and name.
      * @return A formatted tuple of key and name.
      */
-    @NotNull String join() {
+    @NotNull public String join() {
         if(key().isEmpty()) throw new IllegalArgumentException("Namespace.join() | Can't join because key is empty.");
         if(name().isEmpty()) throw new IllegalArgumentException("Namespace.join() | Can't join because name is empty.");
         return key().toLowerCase().concat(":").concat(name().toLowerCase());
