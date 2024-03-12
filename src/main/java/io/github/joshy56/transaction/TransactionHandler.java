@@ -5,7 +5,6 @@ import io.github.joshy56.response.Response;
 import io.github.joshy56.subject.Subject;
 
 import java.util.Set;
-import java.util.UUID;
 
 /**
  * @author joshy56
@@ -14,51 +13,45 @@ import java.util.UUID;
 public interface TransactionHandler {
 
     /**
-     *
      * @param subject
-     * @param currencyName
+     * @param currency
      * @return
      */
-    Response<Double> balance(UUID subject, String currencyName);
+    Response<Double> balance(Subject subject, Currency currency);
 
     /**
-     *
      * @param subject
-     * @param currencyName
+     * @param currency
      * @param amount
      * @return
      */
-    Response<Boolean> withdraw(UUID subject, String currencyName, double amount);
+    Response<Boolean> withdraw(Subject subject, Currency currency, double amount);
 
     /**
-     *
      * @param subject
-     * @param currencyName
+     * @param currency
      * @param amount
      * @return
      */
-    Response<Boolean> deposit(UUID subject, String currencyName, double amount);
+    Response<Boolean> deposit(Subject subject, Currency currency, double amount);
 
     /**
-     *
      * @param subject
-     * @param currencyName
+     * @param currency
      * @param amount
      * @return
      */
-    Response<Boolean> enoughMoney(UUID subject, String currencyName, double amount);
+    Response<Boolean> enoughMoney(Subject subject, Currency currency, double amount);
 
     /**
-     *
-     * @param subjectIdentifier
+     * @param subject
      * @return
      */
-    Response<Set<Currency>> currenciesOf(UUID subjectIdentifier);
+    Response<Set<Currency>> currenciesOf(Subject subject);
 
     /**
-     *
-     * @param currencyName
+     * @param currency
      * @return
      */
-    Response<Set<Subject>> subjectsOf(String currencyName);
+    Response<Set<Subject>> subjectsOf(Currency currency);
 }
