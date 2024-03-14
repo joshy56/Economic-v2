@@ -24,7 +24,7 @@ public final class Response<T> {
         this.error = error;
     }
 
-    public static <T>  @NotNull Response<T> of(@NotNull T value) {
+    public static <T> @NotNull Response<T> of(@NotNull T value) {
         return new Response<>(ResponseCode.OK, value, null);
     }
 
@@ -111,7 +111,7 @@ public final class Response<T> {
 
     @Override
     public boolean equals(Object obj) {
-        if(obj == null) return false;
+        if (obj == null) return false;
         return ((obj instanceof Response<?> other) && Objects.equals(code, other.code) && Objects.equals(value, other.value));
     }
 

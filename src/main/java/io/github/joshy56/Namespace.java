@@ -1,19 +1,39 @@
 package io.github.joshy56;
 
+import lombok.NonNull;
+import lombok.Value;
+import lombok.With;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.Optional;
 
 /**
  * @author joshy56
  * @since 5/3/2024
  */
-public record Namespace(@NotNull String key, @NotNull String name) {
+@Value(staticConstructor = "of")
+public class Namespace {
+    @With
+    @NonNull String key, name;
+
+    public static @NonNull Namespace ofFormatted(@NotNull String value) {
+        return Optional.of(value)
+                .map(str -> str.indexOf(':'))
+                .filter(index -> index > 0)
+                .map(index -> new Namespace(value.substring(0, index - 1), value.substring(index)))
+                .orElseThrow(IllegalArgumentException::new);
+    }
+
     /**
      * Give the join or formatted value of key and name.
+     *
      * @return A formatted tuple of key and name.
      */
-    @NotNull public String join() {
-        if(key().isEmpty()) throw new IllegalArgumentException("Namespace.join() | Can't join because key is empty.");
-        if(name().isEmpty()) throw new IllegalArgumentException("Namespace.join() | Can't join because name is empty.");
-        return key().toLowerCase().concat(":").concat(name().toLowerCase());
+    public @NotNull String join() {
+        if (getKey().isEmpty())
+            throw new IllegalArgumentException("Namespace.join() | Can't join because key is empty.");
+        if (getName().isEmpty())
+            throw new IllegalArgumentException("Namespace.join() | Can't join because name is empty.");
+        return getKey().concat(":").concat(getName());
     }
 }
